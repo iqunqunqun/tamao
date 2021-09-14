@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ivan.tamao.mapper.SysUserMapper">
+
+    <select id="detail" parameterType="long" resultType="com.ivan.tamao.vo.SysUserVO">
+        SELECT su.user_id    AS userId,
+               su.user_name  AS userName,
+               su.`password` AS `password`,
+               su.phone      AS phone,
+               su.email      AS email,
+               su.avatar     AS avatar,
+               su.`status`   AS `status`
+        FROM sys_user AS su
+        WHERE user_id = #{userId}
+    </select>
+
+</mapper>
